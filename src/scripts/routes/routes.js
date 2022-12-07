@@ -1,0 +1,12 @@
+import HomePage from '../views/pages/home-page';
+import Favorite from '../views/pages/Favorite';
+import Detail from '../views/pages/detail';
+ 
+const routes = {
+  '/': HomePage, // default page
+  '/home-page': HomePage,
+  '/favorite': Favorite,
+  '/detail/:id': Detail,
+};
+ 
+export default routes;
