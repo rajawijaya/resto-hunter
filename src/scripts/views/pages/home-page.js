@@ -1,3 +1,6 @@
+import RestaurantDbSource from '../../data/restaurantdb-source';
+import { createRestoItem } from  '../templates/template-creator';
+
 
 const HomePage = {
   async render() {
@@ -37,6 +40,17 @@ const HomePage = {
   },
  
   async afterRender() {
+    
+    
+    const restos = await RestaurantDbSource.homePage()
+    const restoContainer = document.querySelector(".card-wrapper")
+    
+    restos.forEach( (resto) => {
+      console.log(createRestoItem);
+      restoContainer.innerHTML += createRestoItem(resto)
+    })
+    
+    
     const hamburgMenu = document.querySelector('.hamburg-menu');
     const discover = document.querySelector('.discover');
     const open = hamburgMenu.classList;
