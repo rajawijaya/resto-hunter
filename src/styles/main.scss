@@ -15,6 +15,7 @@ $secondary-choco: #AA8B56;
 }
 
 body {
+  min-height: 100vh;
   overflow-x: hidden;
   background-color: $body-bg;
   font-family: Helvetica, Arial, Sans-Serif;
@@ -267,6 +268,48 @@ nav {
   }
 }
 
+.detail-content {
+  width: 80%;
+  margin: 0 auto;
+  .title-resto {
+    padding: 20px 0;
+  }
+  img {
+    width: 100%;
+  }
+  .detail-resto {
+    margin: 30px 0 0;
+    text-align: left;
+    table {
+      tr {
+        height: 30px;
+        th {
+          vertical-align: top;
+          width: 40%;
+        }
+        td {
+          vertical-align: top;
+        }
+      }
+    }
+  }
+}
+
+.menus {
+  text-align: center;
+  .heading {
+    font-size: 2em;
+    font-weight: bold;
+  }
+  h2 {
+    padding: 0 0 30px;
+  }
+  .food, .drink {
+    padding-bottom: 30px;
+  }
+}
+
+
 footer {
   background-color: $primary-green;
   color: $secondary-choco;
@@ -301,6 +344,20 @@ footer {
   }
   .jumbotron {
     height: 700px;
+  }
+  .resto-info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 50px;
+    table {
+      font-size: 1.4em;
+    }
+  }
+  .menus {
+    .heading {
+      font-size: 3em;
+    }
   }
 }
 

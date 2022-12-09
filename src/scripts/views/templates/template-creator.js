@@ -25,4 +25,39 @@ import CONFIG from '../../globals/config';
    `
  }
  
- export { createRestoItem }
+ 
+ const createRestoItemDetail = (resto) => {
+  
+  return `
+  <div class="resto-info">
+    <div class="resto-title">
+      <h2 class="title-resto">${resto.name}</h2>
+      <img src="${CONFIG.BASE_IMAGE_URL + resto.pictureId}" alt="resto title">
+    </div>
+    <div class="detail-resto">
+      <table border="0">
+        <tr>
+          <th>Rating</th>
+          <td>: ${resto.rating}</td>
+        </tr>
+        <tr>
+          <th>City</th>
+          <td>: ${resto.city}</td>
+        </tr>
+        <tr>
+          <th>Address</th>
+          <td>: ${resto.address}</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <h4>Description :</h4>
+  <br>
+  <p>${resto.description}</p>
+
+ `
+
+}
+
+
+ export { createRestoItem, createRestoItemDetail }

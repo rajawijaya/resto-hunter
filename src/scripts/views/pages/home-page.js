@@ -42,11 +42,9 @@ const HomePage = {
   async afterRender() {
     
     
-    const restos = await RestaurantDbSource.homePage()
+    const restos = await RestaurantDbSource.homePage();
     const restoContainer = document.querySelector(".card-wrapper")
-    
     restos.forEach( (resto) => {
-      console.log(createRestoItem);
       restoContainer.innerHTML += createRestoItem(resto)
     })
     

@@ -1,6 +1,6 @@
 @font-face {
   font-family: kabut-hitam;
-  src: url("./fonts/Kabut Hitam.ttf");
+  src: url("../public/fonts/Kabut Hitam.ttf");
 }
 
 * {
@@ -11,6 +11,7 @@
 }
 
 body {
+  min-height: 100vh;
   overflow-x: hidden;
   background-color: #F0EBCE;
   font-family: Helvetica, Arial, Sans-Serif;
@@ -21,6 +22,7 @@ a:focus, button:focus, .hamburg-menu:focus {
 }
 
 .skip {
+  height: 44px;
   position: absolute;
   top: -50px;
   left: -50px;
@@ -70,12 +72,15 @@ nav ul {
 
 nav ul li {
   padding: 10px;
+  height: 44px;
+  overflow: visible;
 }
 
 nav ul li a {
-  padding: 3px;
+  height: 44px;
+  padding: 15px;
   text-decoration: none;
-  border-radius: 20px;
+  border-radius: 10px;
   color: #AA8B56;
 }
 
@@ -84,8 +89,8 @@ nav ul li a:hover {
 }
 
 .hamburg-menu {
-  width: 35px;
-  height: 35px;
+  width: 44px;
+  height: 44px;
   padding: 10px;
   position: relative;
   transform: rotate(0deg);
@@ -97,7 +102,7 @@ nav ul li a:hover {
 .hamburg-menu span {
   display: block;
   position: absolute;
-  height: 5px;
+  height: 7px;
   width: 100%;
   background-color: #AA8B56;
   border-radius: 9px;
@@ -112,15 +117,15 @@ nav ul li a:hover {
 }
 
 .hamburg-menu span:nth-child(2) {
-  top: 15px;
+  top: 19px;
 }
 
 .hamburg-menu span:nth-child(3) {
-  top: 30px;
+  top: 37px;
 }
 
 .hamburg-menu.open span:nth-child(1) {
-  top: 15px;
+  top: 19px;
   transform: rotate(135deg);
 }
 
@@ -130,7 +135,7 @@ nav ul li a:hover {
 }
 
 .hamburg-menu.open span:nth-child(3) {
-  top: 15px;
+  top: 19px;
   transform: rotate(-135deg);
 }
 
@@ -151,8 +156,8 @@ nav ul li a:hover {
   align-items: start;
   padding: 10px;
   color: white;
-  height: 270px;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("./images/heros/hero-image_2.jpg");
+  height: 273px;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../public/images/heros/hero-image_2.jpg");
   background-size: cover;
 }
 
@@ -165,6 +170,7 @@ nav ul li a:hover {
 }
 
 .jumbotron a {
+  height: 44px;
   text-decoration: none;
   font-weight: bold;
   color: #AA8B56;
@@ -234,7 +240,7 @@ nav ul li a:hover {
   padding: 10px;
   border-radius: 5px;
   width: 260px;
-  height: 410px;
+  height: 450px;
   background-color: #fffcee;
   box-shadow: 0px 10px 10px #e9e0ad;
 }
@@ -247,7 +253,7 @@ nav ul li a:hover {
   overflow: hidden;
   margin-top: 10px;
   margin-bottom: 10px;
-  height: 170px;
+  height: 180px;
 }
 
 .card-wrapper .card-detail p {
@@ -273,6 +279,7 @@ nav ul li a:hover {
 }
 
 .card-wrapper .card .btn-read-more {
+  height: 44px;
   border-radius: 10px;
   background-color: #395144;
   color: #AA8B56;
@@ -290,6 +297,54 @@ nav ul li a:hover {
 
 .card-wrapper .card.active {
   height: auto;
+}
+
+.detail-content {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.detail-content .title-resto {
+  padding: 20px 0;
+}
+
+.detail-content img {
+  width: 100%;
+}
+
+.detail-content .detail-resto {
+  margin: 30px 0 0;
+  text-align: left;
+}
+
+.detail-content .detail-resto table tr {
+  height: 30px;
+}
+
+.detail-content .detail-resto table tr th {
+  vertical-align: top;
+  width: 40%;
+}
+
+.detail-content .detail-resto table tr td {
+  vertical-align: top;
+}
+
+.menus {
+  text-align: center;
+}
+
+.menus .heading {
+  font-size: 2em;
+  font-weight: bold;
+}
+
+.menus h2 {
+  padding: 0 0 30px;
+}
+
+.menus .food, .menus .drink {
+  padding-bottom: 30px;
 }
 
 footer {
@@ -320,6 +375,21 @@ footer {
 @media screen and (min-width: 768px) {
   .card-wrapper {
     grid-template-columns: 1fr 1fr 1fr;
+  }
+  .jumbotron {
+    height: 700px;
+  }
+  .resto-info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 50px;
+  }
+  .resto-info table {
+    font-size: 1.4em;
+  }
+  .menus .heading {
+    font-size: 3em;
   }
 }
 
