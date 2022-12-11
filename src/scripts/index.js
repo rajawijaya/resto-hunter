@@ -2,6 +2,9 @@ import 'regenerator-runtime';
 import '../styles/main.scss';
 import navBarHandler from './navBarHandler.js'
 import App from './views/app';
+import swRegister from './utils/sw-register';
+import loaderHandler from './utils/loader';
+
  
 const app = new App({
   button: document.querySelector('.hamburg-menu'),
@@ -15,6 +18,7 @@ window.addEventListener('hashchange', () => {
  
 window.addEventListener('load', () => {
   app.renderPage();
-  navBarHandler()
+  navBarHandler();
+  swRegister();
 });
 

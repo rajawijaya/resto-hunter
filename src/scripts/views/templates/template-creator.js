@@ -18,20 +18,21 @@ import CONFIG from '../../globals/config';
             ${resto.description}
           </p>
         </div>
-        <a href="#/detail/${resto.id}" class="btn-see-detail">
+        <a href="#/detail/${resto.id}" class="btn-see-detail" onclick="loaderHandler()">
           <button class="btn-read-more"></button>
         </a>
       </div>
    `
  }
- 
+
+
  
  const createRestoItemDetail = (resto) => {
   
   return `
   <div class="resto-info">
     <div class="resto-title">
-      <h2 class="title-resto">${resto.name}</h2>
+      <h1 class="title-resto">${resto.name}</h1>
       <img src="${CONFIG.BASE_IMAGE_URL + resto.pictureId}" alt="resto title">
     </div>
     <div class="detail-resto">

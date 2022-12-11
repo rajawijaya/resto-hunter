@@ -7,6 +7,15 @@ $secondary-choco: #AA8B56;
   src: url("../public/fonts/Kabut Hitam.ttf");
 }
 
+@keyframes loader {
+  from {
+    opacity: .1;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -42,6 +51,27 @@ body {
     top: 20px;
     left: 20px;
     transition: .5s;
+  }
+}
+
+.loader {
+  visibility: hidden;
+  position: fixed;
+  z-index: 999;
+  width: 100vw;
+  height: 100vh;
+  background-color: $body-bg;
+  img {
+    position: absolute;
+    top: 270px;
+    left: 130px;
+    width: 30vw;
+  }
+  &.active {
+    visibility: visible;
+    img {
+      animation: loader 1s ease-in-out 0s infinite normal;
+    }
   }
 }
 
@@ -301,14 +331,67 @@ nav {
     font-size: 2em;
     font-weight: bold;
   }
-  h2 {
-    padding: 0 0 30px;
-  }
   .food, .drink {
     padding-bottom: 30px;
   }
 }
 
+.reviews {
+  width: 90%;
+  margin: 0 auto 50px;
+  form {
+    h3 {
+      text-align: center;
+      padding-bottom: 20px;
+    }
+    label {
+      font-weight: bold;
+    }
+    input, textarea {
+      background-color: white;
+      width: 100%;
+      padding: 5px;
+      margin-bottom: 10px;
+      border: 2px solid $secondary-choco;
+      border-radius: 10px;
+    }
+    input:focus, textarea:focus {
+      outline: none;
+      border: 2px solid $secondary-green;
+    }
+    button {
+      padding: 20px;
+      background-color: $primary-green;
+      color: $secondary-choco;
+      font-weight: bold;
+      text-transform: uppercase;
+      border: none;
+      border-radius: 10px;
+      &:hover {
+        border: 3px solid $secondary-choco;
+      }
+    }
+  }
+  table, th, td {
+    border-collapse: collapse;
+  }
+  td {
+    vertical-align: top;
+    padding: 5px;
+    width: 33.3%;
+  }
+  thead {
+    height: 70px;
+    font-size: 1.5em;
+  }
+  tbody tr:nth-child(odd) {
+    background-color: $primary-green;
+    color: $secondary-choco;;
+  }
+  tbody tr:nth-child(even) {
+    background-color: #f4e797;
+  }
+}
 
 footer {
   background-color: $primary-green;
