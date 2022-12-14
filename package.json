@@ -5,7 +5,8 @@
   "scripts": {
     "start-dev": "webpack serve --config webpack.dev.js",
     "build": "webpack --config webpack.prod.js",
-    "test": "karma start"
+    "test": "karma start",
+    "serve": "http-server dist"
   },
   "author": "Raja Wijaya rajawijaya987@gmail.com",
   "license": "ISC",
@@ -23,6 +24,7 @@
     "eslint-plugin-n": "^15.5.1",
     "eslint-plugin-promise": "^6.1.1",
     "html-webpack-plugin": "^5.5.0",
+    "http-server": "^14.1.1",
     "jasmine-ajax": "^4.0.0",
     "jasmine-core": "^4.5.0",
     "karma": "^6.4.1",
@@ -42,6 +44,7 @@
     "workbox-webpack-plugin": "^6.5.4"
   },
   "dependencies": {
+    "idb": "^7.1.1",
     "regenerator-runtime": "^0.13.11",
     "workbox-window": "^6.5.4"
   }

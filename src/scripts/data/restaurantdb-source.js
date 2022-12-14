@@ -18,7 +18,7 @@ class RestaurantDbSource {
  
   static async detailResto(id) {
     loaderHandler()
-    const response = await fetch(API_ENDPOINT.DETAIL(id));
+    const response = await fetch(API_ENDPOINT.DETAIL(id), {cache: 'default'});
     loaderHandler()
     return response.json();
   }

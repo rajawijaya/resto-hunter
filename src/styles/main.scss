@@ -63,9 +63,9 @@ body {
   background-color: $body-bg;
   img {
     position: absolute;
-    top: 270px;
-    left: 130px;
-    width: 30vw;
+    top: 35%;
+    left: 40%;
+    width: 20%;
   }
   &.active {
     visibility: visible;
@@ -296,6 +296,11 @@ nav {
   .card.active {
     height: auto;
   }
+}
+
+.like {
+  width: 55px;
+  height: 55px;
 }
 
 .detail-content {

@@ -1,5 +1,5 @@
 import RestaurantDbSource from '../../data/restaurantdb-source';
-import { createRestoItem } from  '../templates/template-creator';
+import { createRestoItem, createLikeButtonTemplate } from  '../templates/template-creator';
 
 
 const HomePage = {
@@ -35,13 +35,13 @@ const HomePage = {
     <div class="card-wrapper">
       <!--Card-->
     </div>
-    
+    <div id="likeButtonContainer"></div>
     `;
   },
  
   async afterRender() {
-    
-    
+    const likeButtonContainer = document.querySelector('#likeButtonContainer');
+    likeButtonContainer.innerHTML = createLikeButtonTemplate();
     const restos = await RestaurantDbSource.homePage();
     const restoContainer = document.querySelector(".card-wrapper")
     restos.forEach( (resto) => {
