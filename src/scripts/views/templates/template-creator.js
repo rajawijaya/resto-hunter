@@ -1,7 +1,6 @@
 import CONFIG from '../../globals/config';
- 
- const createRestoItem = (resto) => {
-  return `
+
+const createRestoItem = (resto) => `
       <div class="card" id="${resto.id}">
         <img src="${CONFIG.BASE_IMAGE_URL + resto.pictureId}" alt="Restaurant Picture">
         <div class="card-detail">
@@ -18,18 +17,13 @@ import CONFIG from '../../globals/config';
             ${resto.description}
           </p>
         </div>
-        <a href="#/detail/${resto.id}" class="btn-see-detail" onclick="loaderHandler()">
+        <a href="#/detail/${resto.id}" class="btn-see-detail">
           <button class="btn-read-more"></button>
         </a>
       </div>
-   `
- }
+   `;
 
-
- 
- const createRestoItemDetail = (resto) => {
-  
-  return `
+const createRestoItemDetail = (resto) => `
   <div class="resto-info">
     <div class="resto-title">
       <h1 class="title-resto">${resto.name}</h1>
@@ -56,10 +50,15 @@ import CONFIG from '../../globals/config';
   <br>
   <p>${resto.description}</p>
 
- `
+ `;
 
-}
+const createLikeButtonTemplate = () => `
+  <button aria-label="like this movie" id="likeButton" class="like">
+     <i class="fa fa-heart-o" aria-hidden="true"></i>
+  </button>
+`;
 
+<<<<<<< HEAD
 const createLikeButtonTemplate = () => `
   <button aria-label="like this movie" id="likeButton" class="like">
   kontolll
@@ -67,12 +66,15 @@ const createLikeButtonTemplate = () => `
   </button>
 `;
  
+=======
+>>>>>>> 1f01c99
 const createLikedButtonTemplate = () => `
   <button aria-label="unlike this movie" id="likeButton" class="like">
     <i class="fa fa-heart" aria-hidden="true"></i>
   </button>
 `;
 
+<<<<<<< HEAD
 
  export { 
   createRestoItem, 
@@ -80,3 +82,11 @@ const createLikedButtonTemplate = () => `
   createLikeButtonTemplate,
   createLikedButtonTemplate
  }
+=======
+export {
+  createRestoItem,
+  createRestoItemDetail,
+  createLikedButtonTemplate,
+  createLikeButtonTemplate,
+};
+>>>>>>> 1f01c99

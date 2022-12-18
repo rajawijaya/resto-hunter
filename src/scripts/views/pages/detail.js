@@ -1,13 +1,14 @@
 import UrlParser from '../../routes/url-parser';
 import RestaurantDbSource from '../../data/restaurantdb-source';
 import { createRestoItemDetail } from '../templates/template-creator';
-import PostReview from '../../utils/reviewerPost'
-
+import PostReview from '../../utils/reviewerPost';
+import LikeButtonInitiator from '../../utils/like-button-initiator';
 
 const Detail = {
   async render() {
     return `
       <div class="detail-content"></div>
+      <div id="likeButtonContainer"></div>
       
       <div class="menus">
         <div class="heading">Menu</div>
@@ -42,30 +43,43 @@ const Detail = {
       </div>
     `;
   },
- 
+
   async afterRender() {
     const url = UrlParser.parseActiveUrlWithoutCombiner();
     const resto = await RestaurantDbSource.detailResto(url.id);
-    const { restaurant } = resto
-    const customerReviews = restaurant.customerReviews
-    const menus = restaurant.menus
-    const { foods, drinks } = menus
+    const { restaurant } = resto;
+    const { customerReviews } = restaurant;
+    const { menus } = restaurant;
+    const { foods, drinks } = menus;
     const detailContainer = document.querySelector('.detail-content');
-    const foodContainer = document.querySelector(".food")
-    const drinkContainer = document.querySelector(".drink")
-    const reviewContainer = document.querySelector(".reviews table tbody")
-    const formContainer = document.querySelector("#form")
-    
-    
+    const foodContainer = document.querySelector('.food');
+    const drinkContainer = document.querySelector('.drink');
+    const reviewContainer = document.querySelector('.reviews table tbody');
+    const form = document.querySelector('form');
+
+    LikeButtonInitiator.init({
+      likeButtonContainer: document.querySelector('#likeButtonContainer'),
+      resto: {
+        id: restaurant.id,
+        name: restaurant.name,
+        description: restaurant.description,
+        city: restaurant.city,
+        address: restaurant.address,
+        pictureId: restaurant.pictureId,
+        menus,
+        customerReviews,
+      },
+    });
+
     detailContainer.innerHTML = createRestoItemDetail(restaurant);
-    
+
     foods.forEach((food) => {
-      foodContainer.innerHTML += `<p>${food.name}<p>`
-    })
-    
+      foodContainer.innerHTML += `<p>${food.name}<p>`;
+    });
+
     drinks.forEach((drink) => {
-      drinkContainer.innerHTML += `<p>${drink.name}<p>`
-    })
+      drinkContainer.innerHTML += `<p>${drink.name}<p>`;
+    });
     customerReviews.forEach((review) => {
       reviewContainer.innerHTML += `
         <tr>
@@ -78,24 +92,23 @@ const Detail = {
           <td>${review.review}</td>
           <td>${review.date}</td>
         </tr>
-      `
-    })
-    
-    form.addEventListener('submit', (e) => {
-      const name = document.querySelector("#Name").value
-      const review = document.querySelector("#Review").value
+      `;
+    });
+
+    form.addEventListener('submit', () => {
+      let name = document.querySelector('#Name').value;
+      let review = document.querySelector('#Review').value;
       if (name === '' && review === '') {
-        alert('nama dan review tidak boleh kosong ')
-        name = ''
-        review = ''
+        alert('nama dan review tidak boleh kosong ');
+        name = '';
+        review = '';
       } else {
-        PostReview(url, name, review)
-        name = ''
-        review = ''
+        PostReview(url, name, review);
+        name = '';
+        review = '';
       }
-    })
-    
-  }
+    });
+  },
 };
- 
+
 export default Detail;

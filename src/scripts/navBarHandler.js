@@ -1,9 +1,9 @@
 const hamburgMenu = document.querySelector('.hamburg-menu');
 const ul = document.querySelector('nav ul');
 const jumb = document.querySelector('.jumbotron-animation');
-const discover = document.querySelector('.discover');
-const open = hamburgMenu.classList;
-const mediaQ = window.matchMedia('(min-width: 768px)');
+// const discover = document.querySelector('.discover');
+// const open = hamburgMenu.classList;
+// const mediaQ = window.matchMedia('(min-width: 768px)');
 
 export default function navBarHandler() {
   // if (mediaQ.matches) {
