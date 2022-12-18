@@ -1,13 +1,27 @@
+import FavoriteRestoIdb from '../../data/favorit-resto-idb';
+import { createRestoItem } from '../templates/template-creator';
+
 const Favorite = {
   async render() {
     return `
-      <h2>Now Favorite Page</h2>
+      <div aria-label="explore" class="heading" id="exp">
+        <p>Favorite</p>
+        <div></div>
+      </div>
+      <div class="card-wrapper">
+        <!--Card-->
+      </div>
     `;
   },
- 
+
   async afterRender() {
-    // Fungsi ini akan dipanggil setelah render()
+    const restos = await FavoriteRestoIdb.getAllRestos();
+    const restoContainer = document.querySelector('.card-wrapper');
+
+    restos.forEach((resto) => {
+      restoContainer.innerHTML += createRestoItem(resto);
+    });
   },
 };
- 
+
 export default Favorite;

@@ -10,6 +10,14 @@ module.exports = {
     ecmaVersion: 'latest',
   },
   rules: {
-    'no-plusplus': 'off'
+    'no-plusplus': 0,
+    'no-mixed-spaces-and-tabs': 0,
+    'no-tabs': 0,
+    'max-len': 0,
+    'no-console': 0,
+    'no-alert': 0,
+    'no-underscore-dangle': 0,
+    'no-restricted-globals': 0,
+    'import/no-extraneous-dependencies': 0,
   },
 };

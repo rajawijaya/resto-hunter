@@ -1,6 +1,5 @@
 import RestaurantDbSource from '../../data/restaurantdb-source';
-import { createRestoItem } from  '../templates/template-creator';
-
+import { createRestoItem } from '../templates/template-creator';
 
 const HomePage = {
   async render() {
@@ -29,7 +28,7 @@ const HomePage = {
     
     <!--Explore-->
     <div aria-label="explore" class="heading" id="exp">
-      <p>Explore</p>
+      <p>Explore</p
       <div></div>
     </div>
     <div class="card-wrapper">
@@ -38,28 +37,25 @@ const HomePage = {
     
     `;
   },
- 
+
   async afterRender() {
-    
-    
     const restos = await RestaurantDbSource.homePage();
-    const restoContainer = document.querySelector(".card-wrapper")
-    restos.forEach( (resto) => {
-      restoContainer.innerHTML += createRestoItem(resto)
-    })
-    
-    
+    const restoContainer = document.querySelector('.card-wrapper');
+    restos.forEach((resto) => {
+      restoContainer.innerHTML += createRestoItem(resto);
+    });
+
     const hamburgMenu = document.querySelector('.hamburg-menu');
     const discover = document.querySelector('.discover');
     const open = hamburgMenu.classList;
     const mediaQ = window.matchMedia('(min-width: 768px)');
-    
+
     if (mediaQ.matches) {
       discover.setAttribute('tabindex', '0');
     } else {
       discover.setAttribute('tabindex', '2');
     }
-    
+
     if (open === 'hamburg-menu open') {
       discover.setAttribute('tabindex', '0');
     } else {
@@ -67,5 +63,5 @@ const HomePage = {
     }
   },
 };
- 
+
 export default HomePage;
