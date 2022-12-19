@@ -55,7 +55,7 @@ const Detail = {
     const foodContainer = document.querySelector('.food');
     const drinkContainer = document.querySelector('.drink');
     const reviewContainer = document.querySelector('.reviews table tbody');
-    const form = document.querySelector('form');
+    const form = document.querySelector('#form');
 
     LikeButtonInitiator.init({
       likeButtonContainer: document.querySelector('#likeButtonContainer'),

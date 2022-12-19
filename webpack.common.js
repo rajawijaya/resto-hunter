@@ -7,10 +7,7 @@ const WorkboxWebpackPlugin = require('workbox-webpack-plugin');
 module.exports = {
   entry: {
     app: path.resolve(__dirname, 'src/scripts/index.js'),
-<<<<<<< HEAD
     //sw: path.resolve(__dirname, 'src/scripts/sw.js'),
-=======
->>>>>>> 1f01c99
   },
   output: {
     filename: '[name].bundle.js',

@@ -17,6 +17,7 @@ class RestaurantDbSource {
   // }
 
   static async detailResto(id) {
+    loaderHandler();
     const response = await fetch(API_ENDPOINT.DETAIL(id));
     loaderHandler();
     return response.json();

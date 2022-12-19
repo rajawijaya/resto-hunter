@@ -58,35 +58,15 @@ const createLikeButtonTemplate = () => `
   </button>
 `;
 
-<<<<<<< HEAD
-const createLikeButtonTemplate = () => `
-  <button aria-label="like this movie" id="likeButton" class="like">
-  kontolll
-     <i class="fa fa-heart-o" aria-hidden="true"></i>
-  </button>
-`;
- 
-=======
->>>>>>> 1f01c99
 const createLikedButtonTemplate = () => `
   <button aria-label="unlike this movie" id="likeButton" class="like">
     <i class="fa fa-heart" aria-hidden="true"></i>
   </button>
 `;
 
-<<<<<<< HEAD
-
- export { 
-  createRestoItem, 
-  createRestoItemDetail,
-  createLikeButtonTemplate,
-  createLikedButtonTemplate
- }
-=======
 export {
   createRestoItem,
   createRestoItemDetail,
-  createLikedButtonTemplate,
   createLikeButtonTemplate,
+  createLikedButtonTemplate,
 };
->>>>>>> 1f01c99
