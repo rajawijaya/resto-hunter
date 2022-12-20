@@ -279,13 +279,16 @@ nav {
     &-detail.active {
       height: auto;
     }
-    .btn-read-more {
-      height: 44px;
-      border-radius: 10px;
-      background-color: $primary-green;
-      color: $secondary-choco;
-      border: 1px solid $primary-green;
-      padding: 5px;
+    .btn-see-detail {
+      padding: 15px 0 15px;
+      .btn-read-more{
+        height: 44px;
+        border-radius: 10px;
+        background-color: $primary-green;
+        color: $secondary-choco;
+        border: 1px solid $primary-green;
+        padding: 5px;
+      }
     }
     .btn-read-more::before {
       content: "Read More...";
@@ -371,6 +374,9 @@ nav {
     }
     label {
       font-weight: bold;
+    }
+    input {
+      height: 50px;
     }
     input, textarea {
       background-color: white;

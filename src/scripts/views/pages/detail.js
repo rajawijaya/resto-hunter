@@ -9,7 +9,6 @@ const Detail = {
     return `
       <div class="detail-content"></div>
       <div id="likeButtonContainer"></div>
-      
       <div class="menus">
         <div class="heading">Menu</div>
         <div class="food">
@@ -56,6 +55,11 @@ const Detail = {
     const drinkContainer = document.querySelector('.drink');
     const reviewContainer = document.querySelector('.reviews table tbody');
     const form = document.querySelector('#form');
+    const skipToContent = document.querySelector(".skip")
+    skipToContent.addEventListener("click", (e) => {
+      e.preventDefault()
+      window.scrollTo(0, 350)
+    })
 
     LikeButtonInitiator.init({
       likeButtonContainer: document.querySelector('#likeButtonContainer'),

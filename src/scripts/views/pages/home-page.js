@@ -25,7 +25,6 @@ const HomePage = {
         </p>
       </div>
     </div>
-    
     <!--Explore-->
     <div aria-label="explore" class="heading" id="exp">
       <p>Explore</p
@@ -48,6 +47,11 @@ const HomePage = {
     const discover = document.querySelector('.discover');
     const open = hamburgMenu.classList;
     const mediaQ = window.matchMedia('(min-width: 768px)');
+    const skipToContent = document.querySelector(".skip")
+    skipToContent.addEventListener("click", (e) => {
+      e.preventDefault()
+      window.scrollTo(0, 1000)
+    })
 
     if (mediaQ.matches) {
       discover.setAttribute('tabindex', '0');
