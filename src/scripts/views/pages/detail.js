@@ -55,11 +55,11 @@ const Detail = {
     const drinkContainer = document.querySelector('.drink');
     const reviewContainer = document.querySelector('.reviews table tbody');
     const form = document.querySelector('#form');
-    const skipToContent = document.querySelector(".skip")
-    skipToContent.addEventListener("click", (e) => {
-      e.preventDefault()
-      window.scrollTo(0, 350)
-    })
+    const skipToContent = document.querySelector('.skip');
+    skipToContent.addEventListener('click', (e) => {
+      e.preventDefault();
+      window.scrollTo(0, 350);
+    });
 
     LikeButtonInitiator.init({
       likeButtonContainer: document.querySelector('#likeButtonContainer'),
@@ -72,6 +72,7 @@ const Detail = {
         pictureId: restaurant.pictureId,
         menus,
         customerReviews,
+        rating: restaurant.rating,
       },
     });
 
