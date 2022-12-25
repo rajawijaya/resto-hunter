@@ -24,6 +24,12 @@ class App {
     const page = routes[url];
     this._content.innerHTML = await page.render();
     await page.afterRender();
+    const skipButton = document.querySelector('.skip');
+    const content = document.querySelector('#mainContent');
+    skipButton.addEventListener('click', (e) => {
+      e.preventDefault();
+      content.focus();
+    });
   }
 }
 

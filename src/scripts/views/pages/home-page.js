@@ -43,27 +43,33 @@ const HomePage = {
       restoContainer.innerHTML += createRestoItem(resto);
     });
 
-    const hamburgMenu = document.querySelector('.hamburg-menu');
-    const discover = document.querySelector('.discover');
-    const open = hamburgMenu.classList;
-    const mediaQ = window.matchMedia('(min-width: 768px)');
-    const skipToContent = document.querySelector('.skip');
-    skipToContent.addEventListener('click', (e) => {
-      e.preventDefault();
-      window.scrollTo(0, 1000);
-    });
+    // const skipToContent = document.querySelector('.skip');
+    // skipToContent.addEventListener('click', (e) => {
+    //   e.preventDefault();
+    //   window.location.href = "#exp"
+    // });
 
-    if (mediaQ.matches) {
-      discover.setAttribute('tabindex', '0');
-    } else {
-      discover.setAttribute('tabindex', '2');
-    }
+    // const hamburgMenu = document.querySelector('.hamburg-menu');
+    // const discover = document.querySelector('.discover');
+    // const open = hamburgMenu.classList;
+    // const mediaQ = window.matchMedia('(min-width: 768px)');
+    // const skipToContent = document.querySelector('.skip');
+    // skipToContent.addEventListener('click', (e) => {
+    //   e.preventDefault();
+    //   window.scrollTo(0, 1000);
+    // });
 
-    if (open === 'hamburg-menu open') {
-      discover.setAttribute('tabindex', '0');
-    } else {
-      discover.setAttribute('tabindex', '2');
-    }
+    // if (mediaQ.matches) {
+    //   discover.setAttribute('tabindex', '0');
+    // } else {
+    //   discover.setAttribute('tabindex', '2');
+    // }
+
+    // if (open === 'hamburg-menu open') {
+    //   discover.setAttribute('tabindex', '0');
+    // } else {
+    //   discover.setAttribute('tabindex', '2');
+    // }
   },
 };
 
