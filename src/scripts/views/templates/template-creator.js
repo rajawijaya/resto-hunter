@@ -2,7 +2,7 @@ import CONFIG from '../../globals/config';
 
 const createRestoItem = (resto) => `
       <div class="card" id="${resto.id}">
-        <img src="${CONFIG.BASE_IMAGE_URL + resto.pictureId}" alt="Restaurant Picture">
+        <img class="lazyload" data-src="${CONFIG.BASE_IMAGE_URL + resto.pictureId}" alt="Restaurant Picture">
         <div class="card-detail">
           <p><img src="./images/icons/star-solid.svg" alt="ratings" width="10px"/>
           ${resto.rating}
