@@ -20,5 +20,10 @@ exports.config = {
   include: {
     I: './steps_file.js'
   },
-  name: 'resto-hunter'
+  name: 'resto-hunter',
+  plugins: {
+    autoDelay: {
+      enabled: true
+    }
+  }
 }
